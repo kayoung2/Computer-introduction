@@ -1,9 +1,9 @@
 // 입력한 base의 진수로 바꾸어 주는 pep8 코드
 
 1. Pseudocode algorithm
-Write ��Enter the new base��
+Write "Enter the new base"
 Read newBase
-Write ��Enter the number to be converted��
+Write "Enter the number to be converted"
 Read decimalNumber
 Set answer to 0
 Set quotient to decimal number
@@ -12,7 +12,7 @@ Set quotient to decimalNumber DIV newBase
 Set remainder to decimalNumber REM newBase
 Make the remainder the next digit to the left in the answer
 Set decimalNumber to quotient
-Write ��The answer is��, answer
+Write "The answer is", answer
 
 2. Assembly source code
 BR 0x0051
