@@ -1,0 +1,150 @@
+// 입력한 base의 진수로 바꾸어 주는 pep8 코드
+
+1. Pseudocode algorithm
+Write "Enter the new base"
+Read newBase
+Write "Enter the number to be converted"
+=======
+1. Pseudocode algorithm
+Write "Enter the new base"
+Read newBase
+Write "Enter the number to be converted"
+>>>>>>> master
+Read decimalNumber
+Set answer to 0
+Set quotient to decimal number
+While (quotient is not zero)
+Set quotient to decimalNumber DIV newBase
+Set remainder to decimalNumber REM newBase
+Make the remainder the next digit to the left in the answer
+Set decimalNumber to quotient
+<<<<<<< HEAD
+Write "The answer is", answer
+=======
+Write "The answer is", answer
+>>>>>>> master
+
+2. Assembly source code
+BR 0x0051
+get1: .ASCII "Enter the new base\n\x00"
+a: .BLOCK 2
+get2:.ASCII "Enter the number to be converted\n\x00"
+b: .BLOCK 2
+counter: .BLOCK 2
+i: .BLOCK 2
+j: .BLOCK 2
+p: .BLOCK 2
+A: .ASCII "A\x00"
+B: .ASCII "B\x00"
+C: .ASCII "C\x00"
+D: .ASCII "D\x00"
+E: .ASCII "E\x00"
+F: .ASCII "F\x00"
+STRO get1, d
+DECI a, d 
+STRO get2, d
+DECI b, d
+LDA i, d
+ADDA 1, i
+STA i, d
+LDA j, d
+ADDA 1, i
+STA j, d
+do1: LDA i, d
+ANDA 0, i
+ADDA j, d
+STA i, d
+LDA counter, d
+ANDA 0, i
+STA counter, d
+do2: LDA j, d
+ADDA i, d
+STA j, d
+LDA counter, d
+ADDA 1, i
+STA counter, d
+LDA counter, d
+CPA a, d
+BRNE do2
+LDA j, d
+SUBA i, d
+STA j, d
+LDA j, d
+CPA b, d
+BRLE do1
+LDA p, d
+ADDA i, d
+STA p, d
+do3:LDA counter, d
+ANDA 0, i
+STA counter, d
+do4:LDA b, d
+SUBA p, d
+STA b, d
+LDA counter, d
+ADDA 1, i
+STA counter, d
+LDA b, d
+CPA p, d
+BRGE do4
+LDA counter, d
+CPA 10, i
+BRLE p1
+CPA 10, i
+BREQ p2
+CPA 11, i
+BREQ p3
+CPA 12, i
+BREQ p4
+CPA 13, i
+BREQ p5
+CPA 14, i
+BREQ p6
+CPA 15, i
+BREQ p7
+p1: DECO counter, d
+BR out
+p2: STRO A, d
+BR out
+p3: STRO B, d
+BR out
+p4: STRO C, d
+BR out
+p5: STRO D, d
+BR out
+p6: STRO E, d
+BR out
+p7: STRO F, d
+BR out
+out:BR do5
+do51:DECO 0, i
+do5:LDA counter, d
+ANDA 0, i
+STA counter, d
+do6:LDA p, d
+CPA 1, i
+BRNE s2
+LDA b, d
+CPA 0, i
+BREQ st
+s2:LDA p, d
+SUBA a, d
+STA p, d
+LDA counter, d
+ADDA 1, i
+STA counter, d
+LDA p, d
+CPA 0, i
+BRNE do6
+LDA p, d
+ANDA 0, i
+ADDA counter, d
+STA p, d
+LDA p, d
+CPA b, d
+BRGT do51
+LDA b, d
+CPA 0, i
+BRNE do3
+st:STOP
+.END
