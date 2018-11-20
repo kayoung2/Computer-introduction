@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-// 입력한 base의 진수로 바꾸어 주는 pep8 코드
-
 1. Pseudocode algorithm
-Write "Enter the new base"
+Write “Enter the new base”
 Read newBase
-Write "Enter the number to be converted"
-=======
-1. Pseudocode algorithm
-Write "Enter the new base"
-Read newBase
-Write "Enter the number to be converted"
->>>>>>> master
+Write “Enter the number to be converted”
 Read decimalNumber
 Set answer to 0
 Set quotient to decimal number
@@ -19,11 +10,7 @@ Set quotient to decimalNumber DIV newBase
 Set remainder to decimalNumber REM newBase
 Make the remainder the next digit to the left in the answer
 Set decimalNumber to quotient
-<<<<<<< HEAD
-Write "The answer is", answer
-=======
-Write "The answer is", answer
->>>>>>> master
+Write “The answer is”, answer
 
 2. Assembly source code
 BR 0x0051
@@ -82,7 +69,7 @@ STA counter, d
 do4:LDA b, d
 SUBA p, d
 STA b, d
-LDA counter, d 
+LDA counter, d
 ADDA 1, i
 STA counter, d
 LDA b, d
