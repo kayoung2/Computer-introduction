@@ -82,7 +82,7 @@ STA counter, d
 do4:LDA b, d
 SUBA p, d
 STA b, d
-LDA counter, d
+LDA counter, d 
 ADDA 1, i
 STA counter, d
 LDA b, d
